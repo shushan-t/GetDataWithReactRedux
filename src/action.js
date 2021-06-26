@@ -1,7 +1,7 @@
 import { SERVER_DATA } from './const';
 
 export const getServerData = () => ( dispatch ) => {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')  
+    fetch('https://jsonplaceholder.typicode.com/todos/4')  
     .then(response => {
         if(response.status === 200){
             // console.log(response, "response")

@@ -14,3 +14,21 @@ export const servserReduser = (state = [], action) => {
         return state
     }
 }
+
+
+// const ACTION_HENDELER={
+//     [SERVER_DATA]:(state,action)=>{
+//         return {
+//             ...state,
+//             serverData:[...action.payload]
+//         }
+//     },
+//   }
+
+//   const initialState={
+//       serverData:[]
+//   }
+// export const servserReduser = (state = initialState, action) => {
+//   const handeler = ACTION_HENDELER[action.type];
+//   return handeler?handeler(state,action):state;
+// }

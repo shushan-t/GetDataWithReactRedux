@@ -2,6 +2,7 @@ import { Component } from "react";
 import { getServerData } from './action';
 import { connect } from 'react-redux';
 import {  bindActionCreators } from 'redux';
+import { selected } from "./reselect";
 
  class ReduxExample extends Component {
     // state = { 
@@ -18,10 +19,24 @@ import {  bindActionCreators } from 'redux';
             {Object.keys(this.props.data).map((item, index) => {
                 console.log(item)
                 
+                
                 return (
                 <div className='div' key ={index}>
                     <h4>{ item }</h4>
                     <p>{`${this.props.data[item]}`}</p>
+                    
+                </div>
+                )
+            })}
+            {Object.keys(this.props.completed).map((item, index) => {
+                console.log(item)
+                
+                
+                return (
+                <div className='div' key ={index}>
+                    <h4>{ item }</h4>
+                    <p>{`${this.props.completed[item]}`}</p>
+                    
                 </div>
                 )
             })}
@@ -35,6 +50,8 @@ import {  bindActionCreators } from 'redux';
  const mapStateToProps = (state, ownProps) => {
     return {
       data: state.server,
+      completed: selected(state),
+
     }
 }
 
